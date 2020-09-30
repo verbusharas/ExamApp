@@ -61,4 +61,14 @@ public class Student {
     public void setExam(Exam exam) {
         this.exam = exam;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
+                ", result=" + result +
+                ", exam=" + exam +
+                '}';
+    }
 }

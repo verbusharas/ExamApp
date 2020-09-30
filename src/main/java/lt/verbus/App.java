@@ -67,6 +67,16 @@ public class App {
             session.saveOrUpdate(examMachineLearning);
             session.saveOrUpdate(examProtocols);
 
+            Query<Student> query = session.createQuery("FROM Student", Student.class);
+            List<Student> students = query.list();
+            students.forEach(System.out::println);
+
+            query = session.createQuery("FROM Student WHERE fk_exam = 6", Student.class);
+            students = query.list();
+            System.out.println("----------------");
+            students.forEach(System.out::println);
+
+
 //            CriteriaBuilder cb = session.getCriteriaBuilder();
 //            CriteriaQuery<Student> cr = cb.createQuery(Student.class);
 //            Root<Student> root = cr.from(Student.class);
