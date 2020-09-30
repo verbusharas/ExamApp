@@ -10,18 +10,24 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name;
+    @Column(name= "full_name")
+    private String fullName;
 
     private Integer result;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_exam")
+    private Exam exam;
 
     public Student(){
 
     }
 
-    public Student(Long id, String name, Integer result) {
+    public Student(Long id, String fullName, Integer result, Exam exam) {
         this.id = id;
-        this.name = name;
+        this.fullName = fullName;
         this.result = result;
+        this.exam = exam;
     }
 
     public Long getId() {
@@ -32,12 +38,12 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public Integer getResult() {
@@ -46,5 +52,13 @@ public class Student {
 
     public void setResult(Integer result) {
         this.result = result;
+    }
+
+    public Exam getExam() {
+        return exam;
+    }
+
+    public void setExam(Exam exam) {
+        this.exam = exam;
     }
 }

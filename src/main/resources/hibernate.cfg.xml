@@ -10,7 +10,7 @@
         <property name="connection.password">OtasvsLileikis51833</property>
 
         <!-- JDBC connection pool settings ... using built-oin test pool -->
-        <property name="connection.pool_size">1</property>
+        <property name="connection.pool_size">5</property>
 
         <!-- Select our SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
@@ -32,6 +32,7 @@
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
 
         <mapping class = "lt.verbus.model.Student"/>
+        <mapping class = "lt.verbus.model.Exam"/>
 
     </session-factory>
 </hibernate-configuration>
